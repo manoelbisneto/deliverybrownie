@@ -1,3 +1,4 @@
 <footer>
-    <h1>Rodape bonito</h1>
+    <p>&copy; 2024 Delivery Brownie</p>
+    <p><a href="contact.php">Contato</a></p>
 </footer>
