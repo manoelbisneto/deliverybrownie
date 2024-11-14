@@ -1,5 +1,5 @@
 <?php
-include_once("../config.inc.php");
+include_once("../configuration/config.inc.php");
 
     $nome = $_REQUEST['nome'];
     $email = $_REQUEST['email'];
@@ -18,4 +18,6 @@ include_once("../config.inc.php");
 
     // Fecha conexão
     mysqli_close($conn);
+    header("Location: ../index.php");
+
 ?>

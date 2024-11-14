@@ -1,3 +1,18 @@
+<?php
+
+
+// // Se o usuário não estiver logado, redireciona para o login
+// if (!isset($_SESSION['usuario_logado'])) {
+//     header("Location: view/login.php");
+//     exit;
+// }
+
+// Exibe um conteúdo personalizado para o usuário logado
+if (isset($_SESSION['usuario_logado'])) {
+    echo "<h2>Bem-vindo, " . $_SESSION['usuario_logado'] . "!</h2>";
+}
+?>
+
 <h1>Página inicial</h1>
 
 <h3>A Importância da Sustentabilidade</h3>

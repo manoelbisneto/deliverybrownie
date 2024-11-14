@@ -1,10 +1,10 @@
 <?php
-session_start();
+@session_start();
 
-$is_admin = $_SESSION['cargo'] === 'admin';
+@$is_admin = $_SESSION['tipo'] === 'admin';
 ?>
 
-<form action="../model/cadastro_usuario.php" method="POST">
+<form action="model\cadastro_usuario.php" method="POST">
     <label for="nome">Nome:</label>
     <input type="text" name="nome" id="nome" required>
 

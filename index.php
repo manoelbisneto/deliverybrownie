@@ -1,4 +1,5 @@
 <?php
+session_start();
 include_once("view/templates/topo.php");
 include_once("view/templates/menu.php");
 
