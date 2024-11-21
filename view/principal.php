@@ -15,7 +15,7 @@ if (isset($_SESSION['usuario_logado'])) {
 
 <h1>Página inicial</h1>
 
-<h3>A Importância da Sustentabilidade</h3>
+<h3>Delivery Brownies</h3>
 <p>
 Nos dias de hoje, a sustentabilidade se tornou um dos pilares fundamentais para o desenvolvimento de projetos web. 
 Ao criar soluções digitais, é essencial considerar o impacto ambiental e social que essas tecnologias podem gerar. 
