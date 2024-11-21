@@ -13,24 +13,19 @@ if (isset($_SESSION['usuario_logado'])) {
 }
 ?>
 
-<h1>Página inicial</h1>
+<h1>Brownie do Mano</h1>
 
-<h3>A Importância da Sustentabilidade</h3>
+<h3>Quem Somos</h3>
 <p>
-Nos dias de hoje, a sustentabilidade se tornou um dos pilares fundamentais para o desenvolvimento de projetos web. 
-Ao criar soluções digitais, é essencial considerar o impacto ambiental e social que essas tecnologias podem gerar. 
-Optar por práticas sustentáveis não apenas ajuda a preservar o planeta, mas também fortalece a imagem da marca, 
-atraindo um público cada vez mais consciente. 
-Implementar técnicas como otimização de recursos, uso de energias renováveis e design ecológico pode fazer toda a diferença, 
-contribuindo para um futuro mais responsável e inovador.
+Somos uma confeitaria apaixonada por criar momentos doces e inesquecíveis. Especializada em brownies artesanais, 
+nossos produtos são feitos com ingredientes de alta qualidade, combinando sabor, textura e criatividade. Aqui, cada 
+pedaço é um convite para celebrar as pequenas e grandes alegrias da vida. 
+
 </p>
 <br>
-<h3>A Experiência do Usuário em Foco</h3>
+<h3>Nossa Missão</h3>
 <p>
-A experiência do usuário (UX) é um aspecto crucial no desenvolvimento de qualquer projeto web. 
-Um site bem projetado não apenas atrai visitantes, mas também os mantém engajados e satisfeitos. 
-Para isso, é fundamental entender as necessidades e expectativas do público-alvo, criando uma interface intuitiva e acessível. 
-Investir em pesquisa de usuários e testes de usabilidade pode revelar insights valiosos, permitindo aprimorar continuamente a 
-interação e garantir que cada visitante tenha uma experiência memorável. 
-Afinal, um bom design vai além da estética; ele se traduz em funcionalidade e prazer ao navegar.
+Encantar nossos clientes com brownies artesanais de excelência, proporcionando experiências únicas
+ por meio de sabores marcantes e um atendimento acolhedor, sempre valorizando a qualidade,
+  a paixão pela confeitaria e a felicidade em cada mordida.
 </p>
