@@ -6,7 +6,7 @@
 $tipo_usuario = isset($_SESSION['tipo']) ? $_SESSION['tipo'] : 'usuario';
 
 // Conexão com o banco de dados
-include_once("../configuration/config.inc.php");
+include_once ("configuration/config.inc.php"); 
 
 // Busca as categorias do banco
 $categorias_query = "SELECT id, categoria FROM categorias";
@@ -69,8 +69,10 @@ $itens_result = $conn->query($itens_query);
                 <?php if ($tipo_usuario === 'admin'): ?>
                     <th>Disponível</th>
                 <?php endif; ?>
+                <?php if (isset($_SESSION['usuario_logado'])): ?>
+                    <th>Ações</th>
+                <?php endif; ?>
 
-                <th>Ações</th>
             </tr>
         </thead>
         <tbody>
@@ -92,17 +94,20 @@ $itens_result = $conn->query($itens_query);
                     <?php if ($tipo_usuario === 'admin'): ?>
                         <td><?php echo ($item['disponivel'] == 1) ? 'Sim' : 'Não';?></td>
                     <?php endif; ?>
-                    <td>
-                        <?php if ($tipo_usuario === 'admin'): ?>
-                            <!-- Ações para admin -->
-                            <a href="editar_item_form.php?id=<?php echo $item['id']; ?>">Editar</a> |
-                            <a href="../model/excluir_item.php?id=<?php echo $item['id']; ?>" onclick="return confirm('Tem certeza que deseja excluir este item?');">Excluir</a> |
-                            <a href="adicionar_carrinho.php?id=<?php echo $item['id']; ?>">Adicionar ao Carrinho</a>
-                        <?php else: ?>
-                            <!-- Ações para usuário -->
-                            <a href="adicionar_carrinho.php?id=<?php echo $item['id']; ?>">Adicionar ao Carrinho</a>
-                        <?php endif; ?>
-                    </td>
+                    <?php if (isset($_SESSION['usuario_logado'])): ?>
+                        <td>
+                            <?php if ($tipo_usuario === 'admin'): ?>
+                                <!-- Ações para admin -->
+                                <a href="view/editar_item_form.php?id=<?php echo $item['id']; ?>">Editar</a> |
+                                <a href="./model/excluir_item.php?id=<?php echo $item['id']; ?>" onclick="return confirm('Tem certeza que deseja excluir este item?');">Excluir</a> |
+                                <a href="./model/adicionar_carrinho.php?id=<?php echo $item['id']; ?>">Adicionar ao Carrinho</a>
+                            <?php endif; ?>
+                            <?php if($tipo_usuario === 'usuario'): ?>
+                                <!-- Ações para usuário -->
+                                <a href="./model/adicionar_carrinho.php?id=<?php echo $item['id']; ?>">Adicionar ao Carrinho</a>
+                            <?php endif; ?>
+                         </td>
+                    <?php endif; ?>
                 </tr>
             <?php endwhile; ?>
         </tbody>
@@ -116,3 +121,10 @@ $itens_result = $conn->query($itens_query);
         <p>Item excluído com sucesso!</p>
     <?php endif; ?>
 <?php endif; ?>
+
+<?php
+if (isset($_SESSION['mensagem'])){
+    echo "<p>{$_SESSION['mensagem']}</p>";
+    unset($_SESSION['mensagem']);  
+}
+?>

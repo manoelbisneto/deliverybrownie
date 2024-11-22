@@ -33,6 +33,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         // Verifica se a senha fornecida corresponde à senha armazenada
         if (password_verify($senha, $user['senha'])) {
             // Inicia a sessão e armazena as informações do usuário
+            $_SESSION['usuario_id'] = $user['id'];
             $_SESSION['usuario_logado'] = $user['nome'];
             $_SESSION['tipo'] = $user['tipo']; // Armazena o tipo de usuário (admin ou usuário)
 
@@ -49,7 +50,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 }
 
-include_once("templates/topo.php");
 ?>
 <form method="POST" action="login.php">
     <label for="email">Email:</label>
@@ -63,5 +63,4 @@ include_once("templates/topo.php");
     <a href="?pag=cadastro_form" class="btn btn-primary">Cadastrar</a>
 
 <?php
-include_once("templates/rodape.php");
 ?>

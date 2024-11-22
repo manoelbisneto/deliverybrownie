@@ -15,7 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $stmt->bind_param("ssdiii", $nome, $descricao, $preco, $categoria, $disponivel, $id);
 
     if ($stmt->execute()) {
-        header("Location: ../view/cardapio.php?status=editado");
+        header("Location: ../index.php?pag=cardapio");
     } else {
         echo "Erro ao atualizar o item: " . $conn->error;
     }

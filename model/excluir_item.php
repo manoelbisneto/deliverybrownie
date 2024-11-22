@@ -10,7 +10,7 @@ if (isset($_GET['id'])) {
     $stmt->bind_param("i", $id);
 
     if ($stmt->execute()) {
-        header("Location: ../view/cardapio.php?status=excluido");
+        header("Location: ../index.php?pag=cardapio");
     } else {
         echo "Erro ao excluir o item: " . $conn->error;
     }
