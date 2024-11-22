@@ -96,7 +96,7 @@ $itens_result = $conn->query($itens_query);
                         <?php if ($tipo_usuario === 'admin'): ?>
                             <!-- Ações para admin -->
                             <a href="editar_item_form.php?id=<?php echo $item['id']; ?>">Editar</a> |
-                            <a href="excluir_item.php?id=<?php echo $item['id']; ?>" onclick="return confirm('Tem certeza que deseja excluir este item?');">Excluir</a> |
+                            <a href="../model/excluir_item.php?id=<?php echo $item['id']; ?>" onclick="return confirm('Tem certeza que deseja excluir este item?');">Excluir</a> |
                             <a href="adicionar_carrinho.php?id=<?php echo $item['id']; ?>">Adicionar ao Carrinho</a>
                         <?php else: ?>
                             <!-- Ações para usuário -->
@@ -108,3 +108,11 @@ $itens_result = $conn->query($itens_query);
         </tbody>
     </table>
 </section>
+
+<?php if (isset($_GET['status'])): ?>
+    <?php if ($_GET['status'] == 'editado'): ?>
+        <p>Item editado com sucesso!</p>
+    <?php elseif ($_GET['status'] == 'excluido'): ?>
+        <p>Item excluído com sucesso!</p>
+    <?php endif; ?>
+<?php endif; ?>
