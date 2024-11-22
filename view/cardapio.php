@@ -6,7 +6,7 @@
 $tipo_usuario = isset($_SESSION['tipo']) ? $_SESSION['tipo'] : 'usuario';
 
 // Conexão com o banco de dados
-include_once("configuration/config.inc.php");
+include_once("../configuration/config.inc.php");
 
 // Busca as categorias do banco
 $categorias_query = "SELECT id, categoria FROM categorias";
@@ -95,8 +95,9 @@ $itens_result = $conn->query($itens_query);
                     <td>
                         <?php if ($tipo_usuario === 'admin'): ?>
                             <!-- Ações para admin -->
-                            <a href="editar_item.php?id=<?php echo $item['id']; ?>">Editar</a> |
-                            <a href="excluir_item.php?id=<?php echo $item['id']; ?>" onclick="return confirm('Tem certeza que deseja excluir este item?');">Excluir</a>
+                            <a href="editar_item_form.php?id=<?php echo $item['id']; ?>">Editar</a> |
+                            <a href="excluir_item.php?id=<?php echo $item['id']; ?>" onclick="return confirm('Tem certeza que deseja excluir este item?');">Excluir</a> |
+                            <a href="adicionar_carrinho.php?id=<?php echo $item['id']; ?>">Adicionar ao Carrinho</a>
                         <?php else: ?>
                             <!-- Ações para usuário -->
                             <a href="adicionar_carrinho.php?id=<?php echo $item['id']; ?>">Adicionar ao Carrinho</a>
