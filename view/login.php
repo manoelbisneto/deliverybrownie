@@ -51,7 +51,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 }
 
 ?>
-<form method="POST" action="login.php">
+<form method="POST" action="view/login.php">
     <label for="email">Email:</label>
     <input type="email" name="email" id="email" required><br><br>
 

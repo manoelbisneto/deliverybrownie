@@ -44,7 +44,10 @@ $stmt->bind_param("i", $pedido_id);
 $stmt->execute();
 $itens_result = $stmt->get_result();
 ?>
-
+<head>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
     <h1>Detalhes do Pedido #<?php echo $pedido['id']; ?></h1>
 
     <p><strong>Cliente:</strong> <?php echo htmlspecialchars($pedido['cliente']); ?></p>
@@ -71,17 +74,19 @@ $itens_result = $stmt->get_result();
                         <td><?php echo number_format($item['preco'], 2, ',', '.'); ?></td>
                         <td><?php echo number_format($item['quantidade'] * $item['preco'], 2, ',', '.'); ?></td>
                     </tr>
-                <?php endwhile; ?>
+                    <?php endwhile; ?>
             </tbody>
         </table>
     <?php else: ?>
         <p>Não há itens neste pedido.</p>
     <?php endif; ?>
-
+                
     <?php if ($pedido['estado'] === 'pendente'): ?>
         <h2>Ações</h2>
         <a href="../model/alterar_estado.php?id=<?php echo $pedido['id']; ?>&estado=cancelado" 
-           onclick="return confirm('Tem certeza que deseja cancelar este pedido?');">Cancelar Pedido</a>
-    <?php endif; ?>
-
-    <a href="../index.php?pag=pedidos">Voltar</a>
+        onclick="return confirm('Tem certeza que deseja cancelar este pedido?');">Cancelar Pedido</a>
+        <?php endif; ?>
+        
+        <a href="../index.php?pag=pedidos">Voltar</a> 
+</body>            
+<?php include_once("templates/rodape.php");?>
