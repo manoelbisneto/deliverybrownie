@@ -26,7 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     if ($stmt->execute()) {
         // Redireciona de volta para a página do cardápio com uma mensagem de sucesso
-        header("Location: ../view/cardapio.php?status=sucesso");
+        header("Location: ../index.php?pag=cardapio");
         exit;
     } else {
         echo "Erro ao adicionar item: " . $conn->error;

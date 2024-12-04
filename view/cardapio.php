@@ -27,7 +27,7 @@ $itens_result = $conn->query($itens_query);
     <!-- Formulário para adicionar novo item ao cardápio -->
     <section>
         <h2>Adicionar Novo Item</h2>
-        <form action="../model/adicionar_item.php" method="POST">
+        <form action="./model/adicionar_item.php" method="POST">
             <label for="nome">Nome do Item:</label>
             <input type="text" id="nome" name="nome" required><br><br>
 
